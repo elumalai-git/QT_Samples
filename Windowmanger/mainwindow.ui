@@ -18,89 +18,17 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>20</y>
-      <width>781</width>
+      <y>80</y>
+      <width>711</width>
       <height>27</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>http://www.google.com</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>http://www.yahoo.com</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>http://www.gmail.com</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="fc_btn">
-    <property name="geometry">
-     <rect>
-      <x>870</x>
-      <y>20</y>
-      <width>97</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>SetFG</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>SetBG</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>70</y>
-      <width>851</width>
-      <height>64</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLineEdit" name="urledit">
-       <property name="text">
-        <string>http://</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QPushButton" name="load_btn">
-         <property name="text">
-          <string>load(samepage)</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="load_new">
-         <property name="text">
-          <string>load(newtab)</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
    </widget>
    <widget class="QPushButton" name="close_btn">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>120</y>
+      <x>930</x>
+      <y>90</y>
       <width>41</width>
       <height>21</height>
      </rect>
@@ -108,6 +36,59 @@
     <property name="text">
      <string>x</string>
     </property>
+   </widget>
+   <widget class="QLineEdit" name="urledit">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>10</y>
+      <width>714</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>http://www.google.com</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>10</y>
+      <width>87</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="addurl">
+       <property name="text">
+        <string>Add Url</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="fc_btn">
+       <item>
+        <property name="text">
+         <string>SetFG</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>SetBG</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="launch_btn">
+       <property name="text">
+        <string>Launch</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

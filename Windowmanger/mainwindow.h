@@ -17,21 +17,22 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void init();
 private slots:
-    void on_load_btn_clicked();
 
     void on_close_btn_clicked();
 
     void on_fc_btn_activated(QString );
 
-    void on_comboBox_activated(QString );
+    void on_launch_btn_clicked();
 
-    void on_load_new_clicked();
+    void on_addurl_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QWebView *webview;
+    QWebView *m_webview;
+    QWebView *m_zorder;
+    QMap <QString, QWebView* > m_map;
+    QString strUrlName;
 };
 
 #endif // MAINWINDOW_H
