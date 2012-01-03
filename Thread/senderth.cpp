@@ -1,34 +1,33 @@
 #include "senderth.h"
 #include <QDebug>
+#include <QEventLoop>
 
 Sender::Sender(QObject *parent)
     : QObject(parent)
 {
-    i = 0;
     startTimer(200);
-    obj_recvth = new ReceiverTh();
-    obj_recvth->start();
-
-
 }
 
 Sender::~Sender()
 {
 
 }
-
-void Sender::start()
+void Sender::run()
 {
-    connect(this,SIGNAL(sigsender()),obj_recvth,SLOT(ThCounter()),Qt::QueuedConnection);
+    QEventLoop loop;
+    loop.exec();
+
 }
 
 void Sender::timerEvent(QTimerEvent *)
 {
+    static int i = 0;
+    i++;
     if(i == 3)
     {
         emit sigsender();
         qDebug() << "Sender ThreadID =" << QThread::currentThreadId();
         i = 0;
     }
-    i++;
+
 }

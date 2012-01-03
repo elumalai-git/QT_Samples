@@ -2,22 +2,25 @@
 #define SENDERTH_H
 
 #include <QtGui/QWidget>
-#include"receiverth.h"
+#include <QThread>
+
 
 class Sender : public QObject
 {
     Q_OBJECT
-    int i;
-    ReceiverTh *obj_recvth;
 
 public:
     Sender(QObject *parent = 0);
-    void start();
+
     ~Sender();
+
+protected:
+    void run();
+    void timerEvent(QTimerEvent *);
+
 signals:
     void sigsender();
-protected:
-    void timerEvent(QTimerEvent *);
+
 };
 
 #endif // SENDERTH_H

@@ -1,26 +1,18 @@
 #include "receiverth.h"
 #include<QDebug>
-#include <QEventLoop>
+#include<QThread>
 
-ReceiverTh::ReceiverTh(QThread *parent) :
-    QThread(parent)
+ReceiverTh::ReceiverTh(QObject *parent) :
+    QObject(parent)
 {
-    moveToThread(this);
-}
-
-
-void ReceiverTh::run()
-{
-    QEventLoop ev_loop;
-    ev_loop.exec();
 
 }
 
 void ReceiverTh::ThCounter()
 {
-    static int counter = 0;
-    qDebug() << "Receiver ThreadID =" << currentThreadId();
-    qDebug()<<"Thread counter value"<<counter;
-    counter++;
+    static int icounter = 0;
+    qDebug() << "Receiver ThreadID =" << QThread::currentThreadId();
+    qDebug()<<"Thread counter value"<<icounter;
+    icounter++;
 
 }

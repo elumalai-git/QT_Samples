@@ -1,22 +1,17 @@
 #ifndef RECEIVERTH_H
 #define RECEIVERTH_H
-#include <QThread>
-//#include <QObject>
 
-class ReceiverTh : public QThread
+#include <QObject>
+
+class ReceiverTh : public QObject
 {
     Q_OBJECT
 public:
-    explicit ReceiverTh(QThread *parent = 0);
-
-protected:
-    void run();
-
-signals:
+    explicit ReceiverTh(QObject *parent = 0);
 
 public slots:
     void ThCounter();
 
 };
 
-#endif // RECEIVERTH_H
+#endif // SenderTH_H
