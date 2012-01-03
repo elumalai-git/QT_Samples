@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>766</width>
+    <width>776</width>
     <height>644</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>30</x>
       <y>20</y>
-      <width>571</width>
+      <width>591</width>
       <height>27</height>
      </rect>
     </property>
@@ -42,7 +42,7 @@
    <widget class="QPushButton" name="downloadbtn">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>650</x>
       <y>20</y>
       <width>97</width>
       <height>27</height>
@@ -52,13 +52,26 @@
      <string>Download</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="quitbutton">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>520</y>
+      <width>97</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quit</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>766</width>
+     <width>776</width>
      <height>25</height>
     </rect>
    </property>

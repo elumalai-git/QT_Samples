@@ -12,13 +12,11 @@ Downloadmanager::Downloadmanager(QWidget *parent) :
 
 }
 
-Downloadmanager::~Downloadmanager()
-{
+Downloadmanager::~Downloadmanager() {
     delete ui;
 }
 
 void Downloadmanager::downloadFile() {
-
 
     url = ui->urlbtn->currentText();
 
@@ -38,8 +36,8 @@ void Downloadmanager::startRequest(QUrl &url) {
     connect(m_reply, SIGNAL(downloadProgress(qint64,qint64)),
             cdownload, SLOT(updateprogrssbar(qint64,qint64)));
 }
-void Downloadmanager::WriteFile()
-{
+void Downloadmanager::StoreFile() {
+    QFile *file;
     if (m_reply->error()) {
         fprintf(stderr, "Download of %s failed: %s\n",
                 url.toEncoded().constData(),
@@ -64,31 +62,33 @@ void Downloadmanager::WriteFile()
 
         }
         QFile::remove(fileName);
-        m_file = new QFile(fileName);
-        if(!m_file->open(QIODevice::WriteOnly))
+        file = new QFile(fileName);
+        if(!file->open(QIODevice::WriteOnly))
         {
             QMessageBox::information(this, tr("Download Manager"),
                                      tr("Unable to save the file %1: %2.")
-                                     .arg(fileName).arg(m_file->errorString()));
-            delete m_file;
-            m_file = 0;
+                                     .arg(fileName).arg(file->errorString()));
+            delete file;
+            file = 0;
             return;
         }
-        if (m_file)
+        if (file)
         {
-            m_file->write(m_reply->readAll());
-            m_file->flush();
-            m_file->close();
-            delete m_file;
-            m_file = 0;
+            file->write(m_reply->readAll());
+            file->flush();
+            file->close();
+            delete file;
+            file = 0;
         }
     }
 
 }
 
-void Downloadmanager::downloadFinished()
-{
+void Downloadmanager::downloadFinished() {
     qDebug("Downloadfinished");
-    WriteFile();
+    StoreFile();
 }
 
+void Downloadmanager::on_quitbutton_clicked() {
+    QMainWindow::close();
+}
