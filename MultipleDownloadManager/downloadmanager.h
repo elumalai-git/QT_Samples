@@ -36,11 +36,11 @@ private slots:
 private:
     Ui::Downloadmanager *ui;
 
-    QProgressBar m_progressbar;
+//    QProgressBar m_progressbar;
     QMap<QProgressBar, QNetworkRequest> m_map;
     QUrl url ;
 
-    QList<QNetworkReply *> m_currentDownloads;
+//    QList<QNetworkReply *> m_currentDownloads;
     QNetworkAccessManager *m_qnam;
     QNetworkReply *m_reply;
     QNetworkRequest *m_request;
