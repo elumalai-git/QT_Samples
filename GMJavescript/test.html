@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript" src="test.js"></script>
+<script type="text/javascript">
+/*
+function success(data)
+{
+	alert("Success" + data.age);
+}*/
+
+function call_sayhello()
+{
+var data = {
+     "companyname"  : "Bosch",
+     "employeename" : "Elumalai",
+     "Companyage"   : 125 + " "+ "years",
+     "address"      :
+     {
+         "streetAddress": "21 2nd Street",
+         "city"         : "Bangalore",
+         "state"        : "Karnataka",
+         "postalCode"   : "560095"
+     },
+     }
+    alert(gm.jssayHello(jsFunc,data));
+//    alert(gm.callFunc(success,jsFunc,JSON-data));
+}
+/* Javascript Function */
+function jsFunc(data)
+{
+    alert("CompanyAge" +" "+ data.Companyage);
+}
+
+
+function show_another_alert()
+{
+	alert("Jave script Function Called");
+}
+gmint.sigtimer.connect(call_sayhello);
+
+</script>
+</head>
+<body>
+
+<input type="button" onclick="show_another_alert()" value="Bosch" />
+
+</body>
+</html>
